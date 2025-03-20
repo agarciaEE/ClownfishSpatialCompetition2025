@@ -1,0 +1,13 @@
+# Ignore system and IDE files
+.DS_Store
+.Rhistory
+.Rproj.user/
+
+# Ignore R data and cache files
+#*.Rdata
+#*.RData
+#.Ruserdata
+
+# Ignore results and temporary files (customize as needed)
+#results/
+#raw_data/
