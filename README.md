@@ -46,8 +46,8 @@ Contains tables summarizing statistical results:
 ## Usage
 1. Clone the repository:
    ```sh
-   git clone <repository_url>
-   cd <repository>
+   git clone git@github.com:agarciaEE/ClownfishSpatialCompetition2025.git
+   cd ClownfishSpatialCompetition2025
    ```
 2. Prepare the environment:
    - Ensure R and required packages are installed.
