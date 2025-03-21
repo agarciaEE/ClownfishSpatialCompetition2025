@@ -4,8 +4,8 @@
 .Rproj.user/
 
 # Ignore R data and cache files
-*.Rdata
-*.RData
+.Rdata
+.RData
 .Ruserdata
 
 # Ignore results and temporary files (customize as needed)
