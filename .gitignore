@@ -19,8 +19,13 @@ dissemination/
 # Ignore files with extensions
 *.png
 *.pdf
+*.tiff
 *.jpeg
 *.jpg
 *.csv
 *.tex
 *.zip
+*.shp
+*.prj
+*.dbf
+*.shx
