@@ -4,9 +4,10 @@
 .Rproj.user/
 
 # Ignore R data and cache files
-.Rdata
-.RData
-.Ruserdata
+*.Rdata
+*.RData
+*.Ruserdata
+*.RDS
 
 # Ignore results and temporary files (customize as needed)
 results/
@@ -16,10 +17,10 @@ dissemination/
 
 
 # Ignore files with extensions
-.png
-.pdf
-.jpeg
-.jpg
-.csv
-.RDS
-.Rdata
+*.png
+*.pdf
+*.jpeg
+*.jpg
+*.csv
+*.tex
+*.zip
