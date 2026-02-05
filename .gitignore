@@ -20,3 +20,6 @@ dissemination/
 .pdf
 .jpeg
 .jpg
+.csv
+.RDS
+.Rdata
