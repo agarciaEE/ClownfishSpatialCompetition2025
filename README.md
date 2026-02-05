@@ -1,7 +1,9 @@
 # Clownfish-Anemone Interaction Analysis
 
 ## Overview
-This repository contains data, scripts, figures, and tables for analyzing ecological niche overlap (EN) vs. resource overlap (RO) in clownfish-anemone interactions across the Indo-Pacific. It includes statistical models, geographical analyses, and niche comparisons across interaction types.
+This repository contains scripts for analyzing ecological niche overlap (EN) vs. resource overlap (RO) in clownfish-anemone interactions across the Indo-Pacific. It includes statistical models, geographical analyses, and niche comparisons across interaction types.
+
+Raw data, processed data, results, tables and figures can be found at the DRYAD repository DOI:10.5061/dryad.2bvq83bv8.778
 
 ## Repository Structure
 
