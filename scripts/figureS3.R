@@ -5,6 +5,7 @@ library(stringr)
 library(ggplot2)
 library(ggpubr)
 library(colorspace)
+library(rnaturalearth)
 
 # set working directory
 wd = "~/Unil/Research/1_NicheCompetition/ClownfishSpatialCompetition2025"
@@ -113,7 +114,13 @@ R_plot <- plot_map(R_df, R_colors, "Restricted\n")
 O_plot <- plot_map(O_df, O_colors, "Occupied\n")
 U_plot <- plot_map(U_df, U_colors, "Unexploited\n")
 
-figS3 <- ggarrange(R_plot, O_plot, U_plot, nrow = 3, labels = c("(a)", "(b)", "(c)"), font.label = list(size = 30))
+# Get Sea anemone Richness map
+anemSR <- mask(rast(sum(anem_EN.PA, na.rm = TRUE)), R)
+anemSR_df <- as.data.frame(anemSR, xy = TRUE)
+anemSR_colors <- colorRampPalette(viridis::cividis(9))(100)
+anemSR_plot <- plot_map(anemSR_df, anemSR_colors, "Host \nRichness\n")
 
-ggsave("figures/FigS3.ROU_geographical_distribution.pdf", plot = figS3, width=20, height=19, units="in")
+figS3 <- ggarrange(anemSR_plot, R_plot, O_plot, U_plot, nrow = 4, 
+                   labels = c("(a)", "(b)", "(c)", "(d)"), font.label = list(size = 30))
 
+ggsave("figures/FigS3.ROU_geographical_distribution_new.pdf", plot = figS3, width=20, height=25, units="in")

@@ -284,7 +284,7 @@ evaluate_model <- function(Fit., Obs., th = NULL, rep = 1000, metric = c("jaccar
         # Compute empirical p-value
         (sum(null_values >= observed_value) + 1) / (length(null_values) + 1)
       })
-      
+ 
       list(threshold = th[which.max(res.[, get(metric)])],
            p.value = p.values[which.max(res.[, get(metric)])])
     } else {
@@ -312,8 +312,16 @@ evaluate_model <- function(Fit., Obs., th = NULL, rep = 1000, metric = c("jaccar
         list(tp, fp, fn, tn, compute_jaccard(Fit.th, Obs.)))
   }
   
-  compute_metrics(res.)
-  
+  res.[, `:=` (
+    TPR = tp / (tp + fn),
+    TNR = tn / (tn + fp),
+    ACC = (tp + tn) / N,
+    TSS = tp / (tp + fn) + tn / (tn + fp) - 1
+  )]
+  res.[is.na(TPR), TPR := 0]
+  res.[is.na(TNR), TNR := 0]
+  res.[is.na(ACC), ACC := 0]
+  res.[is.na(TSS), TSS := 0]  
   res.[, test := "predicted"]
   
   ## Randomization 
@@ -355,7 +363,18 @@ evaluate_model <- function(Fit., Obs., th = NULL, rep = 1000, metric = c("jaccar
     # Stop cluster
     stopCluster(cl)
     
-    compute_metrics(res.n)
+    res.n[, `:=` (
+      TPR = tp / (tp + fn),
+      TNR = tn / (tn + fp),
+      ACC = (tp + tn) / N,
+      TSS = tp / (tp + fn) + tn / (tn + fp) - 1
+    )]
+    res.n[is.na(TPR), TPR := 0]
+    res.n[is.na(TNR), TNR := 0]
+    res.n[is.na(ACC), ACC := 0]
+    res.n[is.na(TSS), TSS := 0]
+    
+    #compute_metrics(res.n)
     
     res.n[, test := "random"]
     

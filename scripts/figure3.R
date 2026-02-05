@@ -16,6 +16,12 @@ symnum.args <- list(cutpoints = c(0,0.0001, 0.001, 0.01, 0.05, 1), symbols = c("
 colors <- c("#E69F00",  "#2171B5", "#27AD81FF")
 
 D_df <- read.csv("results/niche_overlaps.csv")
+# remove species-regions that actually do not occur
+D_df <- D_df[!(D_df$spa == "Amphiprion_bicinctus"  & D_df$region == "Somali_Arabian") ,]
+D_df <- D_df[!(D_df$spb == "Amphiprion_percula" & D_df$region == "Southeast_Polynesia"),]
+
+write.csv(D_df, "./results/niche_overlaps_corrected.csv", row.names = FALSE)
+
 D_df$pair = 1:nrow(D_df)
 
 ## select cuts
@@ -214,5 +220,5 @@ fig4b <- ggarrange(niche_overlap, env_res_hist,
 fig4 <- ggarrange(fig4a, fig4b, labels = paste0("(", letters[1:2], ")"), font.label = list(size = 20),
                   nrow = 2, common.legend = F, heights = c(1,1))
 
-ggsave("figures/Fig3.species_niche_overlaps.pdf", plot = fig4, width=15, height=12, units="in")
+ggsave("figures/Fig3.species_niche_overlaps_corrected.pdf", plot = fig4, width=15, height=12, units="in")
 

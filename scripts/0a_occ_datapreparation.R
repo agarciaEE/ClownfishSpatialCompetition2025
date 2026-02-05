@@ -184,8 +184,8 @@ write.csv(amph.all.occs, file =  "./data/raw/allDB.amph.occ.dataset.csv", row.na
 ##      Check if occurrences fall inside the environmental data set
 ### ------------------------------------------------------------------------ ###
 ### read occurrence datasets
-amph.occ = read.csv("./data/raw/allDB.amph.occ.dataset.csv")
-anem.occ = read.csv("./data/raw/allDB.anem.occ.dataset.csv")
+amph.occ = read.csv("./raw_data/raw_occs/allDB.amph.occ.dataset.csv")
+anem.occ = read.csv("./raw_data/raw_occs/allDB.anem.occ.dataset.csv")
 
 amphiprion.sps <- unique(amph.occ$species)
 anemone.sps <- unique(anem.occ$species)
