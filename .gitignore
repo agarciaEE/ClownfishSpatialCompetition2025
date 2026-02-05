@@ -13,3 +13,10 @@ results/
 raw_data/
 Rdata/
 dissemination/
+
+
+# Ignore files with extensions
+.png
+.pdf
+.jpeg
+.jpg
