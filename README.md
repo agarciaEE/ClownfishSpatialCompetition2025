@@ -1,4 +1,4 @@
-# Clownfish-Anemone Interaction Analysis
+# Clownfish-Anemone Spatial Ecology and Community Composition
 
 ## Overview
 This repository contains scripts for analyzing ecological niche overlap (EN) vs. resource overlap (RO) in clownfish-anemone interactions across the Indo-Pacific. It includes statistical models, geographical analyses, and niche comparisons across interaction types.
