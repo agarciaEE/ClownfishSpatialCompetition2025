@@ -10,6 +10,7 @@
 *.RDS
 
 # Ignore results and temporary files (customize as needed)
+ai/
 results/
 raw_data/
 Rdata/
